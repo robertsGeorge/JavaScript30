@@ -59,6 +59,36 @@
 
 <script>
 
+  /* Global Variables */
+  const keys = Array.from( document.querySelectorAll('.key') );
+  
+  /* Programme Logic */
+  keys.forEach( key => key.addEventListener('transitionend', removeTransition) );
+  window.addEventListener('keydown', playSound);
+  
+  /* Helper Functions */
+  function playSound(e) {
+    const audio = document.querySelector( `audio[data-key="${e.keyCode}"]` );
+    const key = document.querySelector( `.key[data-key="${e.keyCode}"]` );
+
+    if (!audio) return;
+
+    audio.currentTime = 0;
+    audio.play();
+
+    addTransition(key);
+  }
+
+  function addTransition(element) {
+    element.classList.add('playing');
+  }
+
+  function removeTransition(e) {
+    if (e.propertyName !== 'transform') return; // Skip all but longest transitionend event.
+    
+    this.classList.remove('playing');
+  }
+
 </script>
 
 
