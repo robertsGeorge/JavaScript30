@@ -16,3 +16,8 @@
 * CSS transforms, transitions, transition-timing-function, transform-origin property
 * using JS to animate the CSS transform property
 
+### 03 - CSS Variables - updating with JS
+* CSS filter property (add blur effects, grayscale, etc. to images)
+* dataset: The dataset property on the HTMLElement interface provides read/write access to all the custom data attributes (data-*) set on the element
+* document.documentElement // returns the root element
+* The CSSStyleDeclaration interface: represents an object that is a CSS declaration block, and exposes style information and various style-related methods and properties. accessible via HTMLElement.style
