@@ -27,3 +27,10 @@
 * Array.prototype.sort() // how this works, popping items up and down the list (and relates to index position)
 * The imperative pattern that Array.reduce() makes easier
 * console.table(array/object);
+
+### 05 - Flex Panels Image Gallery
+* Multiple nested flexboxes (element can be both flex container and flex item)
+* Using flex: display on elements with no children, in order to align/justify their text content.
+* CSS transitions, transform: translateY, cubic-bezier() for motion control
+* Triggering CSS transitions by toggling classes using JavaScript
+* Listening for 'click' and 'transitionend' events
