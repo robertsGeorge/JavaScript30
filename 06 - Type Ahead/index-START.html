@@ -7,16 +7,63 @@
 </head>
 <body>
 
-  <form class="search-form">
-    <input type="text" class="search" placeholder="City or State">
-    <ul class="suggestions">
-      <li>Filter for a city</li>
-      <li>or a state</li>
-    </ul>
-  </form>
+
+
+
+<form class="search-form">
+  <input type="text" class="search" placeholder="City or State">
+  <ul class="suggestions">
+    <li>Filter for a city</li>
+    <li>or a state</li>
+  </ul>
+</form>
+
+
+
+
+
 <script>
-const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+
+  const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+  const searchBox = document.querySelector('.search');
+  const suggestions = document.querySelector('.suggestions');
+
+  searchBox.addEventListener('keydown', getData);
+
+  async function getData() {
+    const searchTerm = searchBox.value; // a string.
+    const searchRegEx = new RegExp(`${searchTerm}`, 'g', 'i');
+    const response = await fetch(endpoint);
+    const data = await response.json();
+    // console.log(data);
+
+    const dataFiltered = data.filter(obj => {
+      return obj.city.toLowerCase().includes(searchTerm) || 
+             obj.state.toLowerCase().includes(searchTerm);
+    });
+    // console.log(dataFiltered);
+
+    const html = dataFiltered.reduce((acc, obj) => {
+      return acc + `<li>${obj.city}, ${obj.state}<span class="population">${obj.population}</span></li>`;
+    }, ``);
+
+    suggestions.innerHTML = html;
+    // const htmlWithSearchTermSpanWrapped = html.replace(searchRegEx, `<span class="hl">${searchTerm}</span>`);
+    // suggestions.innerHTML = htmlWithSearchTermSpanWrapped;
+  }
+
+
+
+
 
 </script>
+
+
+
+
+
+
+
+
 </body>
 </html>
