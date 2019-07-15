@@ -34,3 +34,11 @@
 * CSS transitions, transform: translateY, cubic-bezier() for motion control
 * Triggering CSS transitions by toggling classes using JavaScript
 * Listening for 'click' and 'transitionend' events
+
+### 06 - Ajax Type Ahead
+* performing pre operations inside a map method before returning each item
+* Working with fetch and .then .then to get data from a json file hosted as a gist
+* Using the RegExp constructor to generate regex objects to use with .replace() based on a users search input value.
+* Difference between a 'change' event and a 'keyup' event
+* using stackoverflow to find a numberWithCommas() function (complex regex)
+* Using str.match() with regex variable to implement a search feature, along with arr.filter()
