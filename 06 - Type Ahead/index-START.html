@@ -41,6 +41,7 @@
     const matchArray = findMatches(this.value, cities);
     
     const html = matchArray.map(place => {
+      
       const regex = new RegExp(this.value, 'gi');
       const cityName = place.city
         .replace(regex, `<span class="hl">${this.value}</span>`);
@@ -78,12 +79,8 @@
   }
 
 
+/* =======  MY ATTEMPT BEFORE VIEWING TUTORIAL =========== */
 
-
-
-
-
-/* MY ATTEMPT BEFORE VIEWING TUTORIAL */
 /*   
   const searchBox = document.querySelector('.search');
   const suggestions = document.querySelector('.suggestions');
