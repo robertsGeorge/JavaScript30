@@ -42,3 +42,8 @@
 * Difference between a 'change' event and a 'keyup' event
 * using stackoverflow to find a numberWithCommas() function (complex regex)
 * Using str.match() with regex variable to implement a search feature, along with arr.filter()
+
+### 07 - Array Cardio Day 2
+* arr.find() (like filter but returns just the value of the first element that passes the test condition). Otherwise returns undefined
+* arr.findIndex() // returns the index of the first element that passes the test condition, or -1 if it's not there
+* neat way to delete an element from an array (if you know the index) without mutating original: create new array and use slice with spread operator twice, either side of index you wish to delete.
