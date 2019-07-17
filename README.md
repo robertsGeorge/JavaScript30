@@ -47,3 +47,8 @@
 * arr.find() (like filter but returns just the value of the first element that passes the test condition). Otherwise returns undefined
 * arr.findIndex() // returns the index of the first element that passes the test condition, or -1 if it's not there
 * neat way to delete an element from an array (if you know the index) without mutating original: create new array and use slice with spread operator twice, either side of index you wish to delete.
+
+### 08 - HTML5 Canvas
+* Use of a boolean flag variable to direct control flow
+* Use of events: mousemove, mouseout, mousedown, mouseup
+* use of an if statement with a condition containing two conditions separated by || to define boundaries which if breached will trigger a reversal of the flag variable flag = !flag
