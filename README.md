@@ -52,3 +52,12 @@
 * Use of a boolean flag variable to direct control flow
 * Use of events: mousemove, mouseout, mousedown, mouseup
 * use of an if statement with a condition containing two conditions separated by || to define boundaries which if breached will trigger a reversal of the flag variable flag = !flag
+
+### 09 - Console methods 
+* console.dir(DOMElement) // to look up properties and methods available
+* console.group() / console.groupEnd() // to add hierarchy to logging output, make it more readable
+* console.time() / console.timeEnd() // to time how long operations take (use same label on each)
+* adding %c to a string, in order to style it with css from the following argument
+* Other string substitution options, like %s (will add the string that is the following argument supplied to the console method)
+* console.assert() // useful for testing something (only logs if assertion is false)
+* break on attribute modification (apply to an HTML element to see what code is acting on it)
