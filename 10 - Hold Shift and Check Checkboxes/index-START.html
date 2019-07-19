@@ -5,6 +5,8 @@
   <title>Hold Shift to Check Multiple Checkboxes</title>
 </head>
 <body>
+
+
   <style>
 
     html {
@@ -17,7 +19,7 @@
       margin: 50px auto;
       background: white;
       border-radius: 5px;
-      box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+      box-shadow: 10px 10px 0 rgba(161, 45, 45, 0.1);
     }
 
     .item {
@@ -95,7 +97,48 @@
     </div>
   </div>
 
+
 <script>
+  'use strict';
+
+  const checkboxes = document.querySelectorAll('[type="checkbox"]'); // is not live.
+
+  // e.shiftKey works with mouse events, so using 'click' not 'change'.
+  checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleMultiCheck));
+  
+  // as an event listener callback, can only receive one argument - the event object
+  function handleMultiCheck(e) {
+    if (!e.shiftKey) return;  // MouseEvent shiftKey Property.
+    
+    const boxes = [...document.querySelectorAll('[type="checkbox"]')]; // selected again because previous selection not live.
+    const checkedIndices = boxes.reduce((acc, box, index) => {
+      if (box.checked === true) acc.push(index);
+      return acc;
+    }, []);
+    const lowestIndex = checkedIndices[0]; 
+    const highestIndex = checkedIndices[checkedIndices.length - 1];
+
+    if (highestIndex == 0) return;
+    
+    const range = boxes.filter((box, index) => {
+      return index >= lowestIndex && index <= highestIndex;
+    });
+    const alreadyChecked = range.every(box => box.checked === true);
+
+    if (range.length > 1 && alreadyChecked) {
+      range.forEach(box => box.checked = false);
+    } else {
+      boxes.forEach((box, index) => {
+        if (index >= lowestIndex && index <= highestIndex) {
+          box.checked = true;
+        }
+      });
+    }
+  }
+
+  // need index position of both checked items
+  // give these index positions, can then filter the array and apply the checked attribute
+
 </script>
 </body>
 </html>
