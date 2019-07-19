@@ -156,7 +156,7 @@ checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
 
 function handleCheck(e) {
   let inBetween = false; // use as flag variable
-  if (e.shiftKey && this.checked) {
+  if (e.shiftKey && this.checked) { // only execute if the user just checked (rather than unchecked) the box
     
     checkboxes.forEach(checkbox => {
       if (checkbox === this || checkbox === lastChecked) {
