@@ -61,3 +61,8 @@
 * Other string substitution options, like %s (will add the string that is the following argument supplied to the console method)
 * console.assert() // useful for testing something (only logs if assertion is false)
 * break on attribute modification (apply to an HTML element to see what code is acting on it)
+
+### 10 - Hold shift to check multiple checkboxes
+* use of global variable 'lastChecked' to store state between function calls
+* use of this value within function to represent element the event was triggered on (same as e.target)
+* declaring a flag variable 'inBetween', then toggling its value based on two conditions joined by ||, then using it to control flow and actions based on its current value
