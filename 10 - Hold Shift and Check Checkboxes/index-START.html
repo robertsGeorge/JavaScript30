@@ -150,21 +150,21 @@
 
 
 const checkboxes = document.querySelectorAll('.inbox [type="checkbox"]');
-let lastChecked;
+let lastChecked; // this needs to exist as global, as must be remembered between function calls.
 
 checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
 
 function handleCheck(e) {
-  let inBetween = false;
+  let inBetween = false; // use as flag variable
   if (e.shiftKey && this.checked) {
     
     checkboxes.forEach(checkbox => {
       if (checkbox === this || checkbox === lastChecked) {
-        inBetween = !inBetween;
+        inBetween = !inBetween; // set flag based on range settings
         console.log('starting to check them inbetween');
       }
       
-      if (inBetween) {
+      if (inBetween) { // use flag to control action.
         checkbox.checked = true;
       }
     });
