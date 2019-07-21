@@ -66,3 +66,12 @@
 * use of global variable 'lastChecked' to store state (remember) between function calls
 * use of this value within function to represent element the event was triggered on (same as e.target)
 * declaring a flag variable 'inBetween', then toggling its value based on two conditions joined by ||, then using it to control flow and actions based on its current value
+
+### 11 - Custom HTML5 Video Player
+* use of the property called paused on the video player element (a boolean true or false value)
+* use of the 'play' and 'pause' media events to update items onscreen independant of the method used by user to get the video playing
+* The dataset property on the HTMLElement interface provides read/write access to all the custom data attributes (data-*) set on the element.
+* use simple arrow function within event listener to update a global flag variable. The function then uses the flag variable to decide whether to execute code or not.
+* a mouseEvent object has allsorts of data about the event, like where the mouse was positioned on the screen
+* You can look up what events a particular type of element can respond to on its API interface page on MDN
+** realising that an arrow function attached via addEventListener IS the callback function, so you can put a function to run inside its body and that function would need its parentheses after it, because it's a function inside the body of a callback. It's not the callback itself. You must pass through eny arguments that function needs in order to run property. if that's the event object, you need to 'hot-potato' it through, by passing it into the callback function itself first, then on to the function in the body.
