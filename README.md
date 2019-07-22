@@ -77,3 +77,8 @@
 * realising that an arrow function attached via addEventListener IS the callback function, so you can put a function to run inside its body and that function would need its parentheses after it, because it's a function inside the body of a callback. It's not the callback itself. You must pass through eny arguments that function needs in order to run properly. if that's the event object, you need to 'hot-potato' it through, by passing it into the callback function itself first, then on to the function in the body.
 * Process: 'Get our Elements', 'Build out Functions', 'Hook up Event Listeners'
 * Sometimes data from the event object is crucial the function, e.g. a mouseEvent holds data about what coordinates on the screen the mouse-click was at.
+
+### Key Sequence Detection
+* use of the 'keyup' event, and then the 'key' property on the keyBoardEvent object, and pushing that key into a global array to create a key stroke logger.
+* Flexible use of arr.slice() with a negative value as starting point, to count from back of array, then a delete count that starts as a negative value (so doesn't delete anything) until the length of the calling array reaches a certain point, then only one item is deleted (trimmed);
+* use of a library function, from 'cornify.js', a script included in the head element, then the function called in the body using the name of the function followed by parentheses cornify_add();
