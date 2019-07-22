@@ -82,3 +82,9 @@
 * use of the 'keyup' event, and then the 'key' property on the keyBoardEvent object, and pushing that key into a global array to create a key stroke logger.
 * Flexible use of arr.slice() with a negative value as starting point, to count from back of array, then a delete count that starts as a negative value (so doesn't delete anything) until the length of the calling array reaches a certain point, then only one item is deleted (trimmed);
 * use of a library function, from 'cornify.js', a script included in the head element, then the function called in the body using the name of the function followed by parentheses cornify_add();
+
+### Slide in on Scroll
+* use of a debounce function, and why it's needed (to limit the freqency with which a function is called, in this case responding to a scroll view event)
+* window.scrollY and window.innerHeight and HTMLElement.offsetTop properties
+* CSS transition property, css transform with translatex(); 
+* use of CSS opacity property to make an element disappear
