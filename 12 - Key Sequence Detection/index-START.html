@@ -7,6 +7,21 @@
 </head>
 <body>
 <script>
+
+const pressed = [];
+const secretCode = 'george';
+
+window.addEventListener('keyup', (e) => {
+  pressed.push(e.key);
+  pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length); // If deleteCount is 0 or negative, no elements are removed.
+  
+  if (pressed.join('').includes(secretCode)) {
+    cornify_add();
+  }
+});
+
+
+
 </script>
 </body>
 </html>
