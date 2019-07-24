@@ -88,3 +88,9 @@
 * window.scrollY and window.innerHeight and HTMLElement.offsetTop properties
 * CSS transition property, css transform with translatex(); 
 * use of CSS opacity property to make an element disappear
+
+### Objects and Arrays - Reference vs Copy
+* Spread syntax for cloning objects (to make shallow clones of 'own' properties)
+* Older approach of cloning objects using Object.assign({}, obj2Clone, [...additional objs]).
+* Poor man's deep-clone of objects using JSON.parse( JSON.stringify(obj2Clone) );
+* 
