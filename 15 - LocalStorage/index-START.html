@@ -26,17 +26,23 @@
       <input type="submit" value="+ Add Item">
     </form>
 
+    <form class="manage-items"></form>
+
   </div>
 
 <script>
-  const addItems = document.querySelector('.add-items');
+  // const wrapper = document.querySelector('.wrapper');
   const itemsList = document.querySelector('.plates');
+  const itemsAddForm = document.querySelector('.add-items');
+  const manageItems = document.querySelector('.manage-items');
   const items = JSON.parse(localStorage.getItem('items')) || [];
-
-  addItems.addEventListener('submit', addItem);
-  itemsList.addEventListener('click', toggleDone);
-
+  // Needs to run on page load so that items saved to localStorage appear.
   populateList(items, itemsList);
+
+  itemsAddForm.addEventListener('submit', addItem);
+  manageItems.addEventListener('click', clearAll);
+
+  itemsList.addEventListener('click', toggleDone);
 
 
   /* ===== HELPER FUNCTIONS ====== */
@@ -52,11 +58,13 @@
     populateList(items, itemsList);
     localStorage.setItem('items', JSON.stringify(items));
     this.reset(); 
+
+    addButtons(items, manageItems);
   }
 
 
   function toggleDone(e) {
-    if (!e.target.matches('input')) return; // skip this unless it's an input.
+    if (!e.target.matches('input')) return; 
 
     const index = e.target.dataset.index;
     items[index].done = !items[index].done;
@@ -66,7 +74,9 @@
 
 
   function populateList(plates = [], platesList) {
-    
+    // prevents 'loading tapas' message from disappearing on initial page load.
+    if (plates.length === 0) return; 
+
     platesList.innerHTML = plates.map((plate, i) => {
       return `
         <li>
@@ -83,6 +93,32 @@
     }).join('');
   }
  
+
+  function addButtons(plates = [], element) {
+    if (plates.length === 0) return;
+    // skip if the buttons have already been added to manageItems form.
+    if (element.innerHTML) return;
+    
+    const buttonHTML = `
+        <button class="check-all">Check all</button>
+        <button class="uncheck-all">Uncheck all</button>
+        <button class="clear-all">Clear all</button>
+    `;
+    element.insertAdjacentHTML('beforeend', buttonHTML);
+  }
+
+
+  function clearAll(e) {
+    e.preventDefault();
+    
+    // skip if target is not the clear all button.
+    if (!e.target.matches('.clear-all')) return; 
+    // reset the items array to an empty array, and clear localStorage.
+    items.length = 0;
+    localStorage.clear();
+    itemsList.innerHTML = '<li>Loading Tapas...</li>';
+    manageItems.innerHTML = '';
+  }
 
 </script>
 
