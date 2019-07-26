@@ -41,6 +41,8 @@
 
   itemsAddForm.addEventListener('submit', addItem);
   manageItems.addEventListener('click', clearAll);
+  manageItems.addEventListener('click', checkAll);
+  manageItems.addEventListener('click', uncheckAll);
 
   itemsList.addEventListener('click', toggleDone);
 
@@ -119,6 +121,25 @@
     itemsList.innerHTML = '<li>Loading Tapas...</li>';
     manageItems.innerHTML = '';
   }
+
+  function checkAll(e) {
+    e.preventDefault();
+    if (!e.target.matches('.check-all')) return; 
+    
+    items.forEach(item => item.done = true);
+    localStorage.setItem('items', JSON.stringify(items));
+    populateList(items, itemsList);
+  }
+
+  function uncheckAll(e) {
+    e.preventDefault();
+    if (!e.target.matches('.uncheck-all')) return; 
+
+    items.forEach(item => item.done = false);
+    localStorage.setItem('items', JSON.stringify(items));
+    populateList(items, itemsList);
+  }
+
 
 </script>
 
