@@ -20,8 +20,9 @@
     <ul class="plates">
       <li>Loading Tapas...</li>
     </ul>
-    
-    <form class="manage-items"></form>
+
+    <!-- Will be dynamically populated. -->
+    <form class="manage-items"></form> 
 
     <form class="add-items">
       <input type="text" name="item" placeholder="Item Name" required>
@@ -32,14 +33,15 @@
   </div>
 
 <script>
-  // const wrapper = document.querySelector('.wrapper');
+
   const itemsList = document.querySelector('.plates');
   const itemsAddForm = document.querySelector('.add-items');
   const manageItems = document.querySelector('.manage-items');
+  // Load items from local storage if it exists, otherwise set to an empty array.
   const items = JSON.parse(localStorage.getItem('items')) || [];
-  // Needs to run on page load so that items saved to localStorage appear.
+  // Needs to run on page load so that items previously saved to localStorage appear.
   populateList(items, itemsList);
-
+  // Listening for submit covers more user input 'bases' than click.
   itemsAddForm.addEventListener('submit', addItem);
   manageItems.addEventListener('click', clearAll);
   manageItems.addEventListener('click', checkAll);
