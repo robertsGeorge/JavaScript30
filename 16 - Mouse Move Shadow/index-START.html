@@ -35,6 +35,38 @@
   </style>
 
 <script>
+  const hero = document.querySelector('.hero');
+  const text = hero.querySelector('h1');
+  const walk = 100; // 100px
+
+  function shadow(e) {
+    // Get height and width of the hero element using destructuring assigment.
+    const {offsetWidth: width,  offsetHeight: height} = hero; 
+    
+    // Get x and y positions of the cursor using destructuring assigment.
+    let {offsetX: x,  offsetY: y} = e; 
+
+    /* Event target may be a child of hero, so different to 'this'. 
+      in that case, x and y coordinates of cursor become relative 
+      to the child element, so need to account for that. */    
+    if (this !== e.target) {
+      x = x + e.target.offsetLeft; // How far left of parent element is the child.
+      y = y + e.target.offsetTop; // How far from top of parent element is the child.
+    }
+    
+    const xWalk = Math.round((x / width * walk) - (walk / 2));
+    const yWalk = Math.round((y / height * walk) - (walk / 2));
+
+    text.style.textShadow = `
+      ${xWalk}px ${yWalk}px 0 rgba(255,0,255,0.7),
+      ${xWalk * -1}px ${yWalk}px 0 rgba(0,255,255,0.7),
+      ${xWalk}px ${yWalk * -1}px 0 rgba(0,0,255,0.7)
+    `;
+    
+  }
+  
+  hero.addEventListener('mousemove', shadow);
+
 </script>
 </body>
 </html>
