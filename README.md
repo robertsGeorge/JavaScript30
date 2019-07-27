@@ -95,7 +95,6 @@
 * Poor man's deep-clone of objects using JSON.parse( JSON.stringify(obj2Clone) );
 
 ### 15 - Local Storage and Event Delegation
-
 * can use querySelector() method on this within an event listener callback: text = this.querySelector('.item').value
 * localStorage deals in strings only, so need to use JSON.stringify() to put content into it, and JSON.parse() to get content out of it in a useable form.
 * HTMLFormElement interface represents a <form> element in the DOM
@@ -105,3 +104,7 @@
 * use of a ternary operator evaluated within a template literal, depending on the boolean value of an object's property
 * Setting, getting, and clearing items from local storage with .getItem() .setItem('key', object as string) .clear()
 * element.insertAdjacentHTML() // saves you having to use document.createElement
+
+### 16 - Mouse Move Shadow
+* using offsetX and offsetY properties to get x and y coordinates of the mouse cursor as it moves
+* Use of object destructuring assignment
