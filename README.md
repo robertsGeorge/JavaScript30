@@ -108,3 +108,9 @@
 ### 16 - Mouse Move Shadow
 * using offsetX and offsetY properties to get x and y coordinates of the mouse cursor as it moves
 * Use of object destructuring assignment
+
+### 17 - Sorting Band Names without Articles
+* In a regex, using ^ to assert position at beginning of string.
+* Using .join() when setting innerHTML to an array to avoid the toString() object-primitive conversion being called, which will include commas in the string
+* use of helper function split(bandName) within arr.sort() method.
+* with arr.sort(), only providing return 1 or return -1 branches (no need for 0?).
