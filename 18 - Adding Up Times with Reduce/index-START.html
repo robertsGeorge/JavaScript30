@@ -177,11 +177,55 @@
     <li data-time="1:56">
       Video 57
     </li>
-    <li data-time="4:04">
+    <li data-time="19:41">
       Video 58
     </li>
   </ul>
+
 <script>
+  const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
+
+/*   
+  const seconds = timeNodes  
+    .map(node => node.dataset.time)
+    .map(time => {
+      const [mins, secs] = time.split(':').map(parseFloat); 
+      return (mins * 60) + secs;
+    })
+    .reduce((total, vidSecs) => total + vidSecs);
+*/
+  
+  /* === Same as above, but using reduce to 
+  perform all operations on each element in turn.
+  Rather than performing one operation on all elements, 
+  then the next operation on all elements, 
+  as with the .map approach above.=== */ 
+  const seconds = timeNodes
+    .reduce((total, node) => {
+      
+      const timeStr = node.dataset.time;
+      const [mins, secs] = timeStr.split(':').map(parseFloat);
+      const vidSecs = (mins * 60) + secs;
+
+      return total + vidSecs;
+    }, 0);
+
+
+
+  // 3600 = number of seconds in 1 hour.
+  let secondsLeft = seconds;
+
+  const hours = Math.floor(secondsLeft / 3600);
+  secondsLeft = secondsLeft % 3600;
+
+  const mins = Math.floor(secondsLeft / 60);
+  secondsLeft = secondsLeft % 60;
+
+
+
+  console.log('Hours:', hours, 'Mins:', mins, 'Seconds:', secondsLeft);
+  
+
 </script>
 </body>
 </html>
