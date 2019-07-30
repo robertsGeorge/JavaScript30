@@ -114,3 +114,7 @@
 * Using .join() when setting innerHTML to an array to avoid the toString() object-primitive conversion being called, which will include commas in the string
 * use of helper function split(bandName) within arr.sort() method.
 * with arr.sort(), only providing return 1 or return -1 branches (no need for 0?).
+
+### 18 - Tally String Times with Reduce
+* Passing a pre-existing function into .map() as its callback, like so: .map(parseFloat) (if you included an argument between the parentheses, the function will try to execute immediately rather than as a callback, so the argument won't have been defined at that point, and you'll get a reference error)
+* Using .map() inside of a .reduce()
