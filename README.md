@@ -118,3 +118,13 @@
 ### 18 - Tally String Times with Reduce
 * Passing a pre-existing function into .map() as its callback, like so: .map(parseFloat) (if you included an argument between the parentheses, the function will try to execute immediately rather than as a callback, so the argument won't have been defined at that point, and you'll get a reference error)
 * Using .map() inside of a .reduce()
+
+## 19 - Unreal Webcam Fun
+* Accessing video data from function getVideo() {
+  navigator.mediaDevices
+    .getUserMedia({video: true, audio: false})
+    .then(localMediaStream => {
+      // console.log(localMediaStream);
+      video.srcObject = localMediaStream;
+      video.play();
+* Using html canvas element's context to insert image data.
