@@ -128,3 +128,4 @@
       video.srcObject = localMediaStream;
       video.play();
 * Using html canvas element's context to insert image data.
+* link.setAttribute('download', 'handsome');
