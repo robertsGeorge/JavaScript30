@@ -132,5 +132,5 @@
 
 ## 20 - Native Speech Recognition
 
-*
+* use of the SpeechRecognition native browser API
 *
