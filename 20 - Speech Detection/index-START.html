@@ -10,7 +10,7 @@
   </div>
 
 <script>
-  // even if it's webkit version, give it the name of just SpeechRecognition
+  // even if it's webkit version (which Chrome uses), give it the name of just SpeechRecognition
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
   const recognition = new SpeechRecognition();
