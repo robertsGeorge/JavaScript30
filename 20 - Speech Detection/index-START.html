@@ -10,8 +10,43 @@
   </div>
 
 <script>
+  // even if it's webkit version, give it the name of just SpeechRecognition
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
+  const recognition = new SpeechRecognition();
+  recognition.interimResults = true;
+
+  let p = document.createElement('p');
+  const words = document.querySelector('.words');
+  words.appendChild(p);
+
+
+  recognition.addEventListener('result', e => {
+    // console.log(e.results);
+    const transcript = Array.from(e.results)
+      .map(result => result[0].transcript)
+      .join('');
+
+    p.textContent = transcript;
+
+    /* if the sentence is finished (there is a gap in talking
+     create and append a new paragraph that is ready to have the 
+     next iteration of transcript inserted as its textContent */
+    if (e.results[0].isFinal) {
+      p = document.createElement('p');
+      words.appendChild(p);
+    }
+
+    /* example of how you can listen for commands
+    and run apps / methods in response, like Siri! */
+    if (transcript.includes("Siri what is the weather like today")) {
+      console.log('weatherApp.run()');  
+    }
+  });
+
+  recognition.addEventListener('end', recognition.start);
+  
+  recognition.start();
 
 </script>
 
