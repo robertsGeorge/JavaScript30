@@ -131,6 +131,9 @@
 * link.setAttribute('download', 'handsome');
 
 ## 20 - Native Speech Recognition
-
 * use of the SpeechRecognition native browser API
-*
+
+## 21 - Geolocation based Speedometer and Compass
+* Use of Xcode's simulator, to simulate a mobile device (then navigated to the external url on that simulated device) (URL provided by browser Sync server).
+* use of navigator.geolocation interface
+* watchPosition() method of the above, which accepts a Position object containing coordinates/heading/speed etc that is passed to a callback function, which is called whenever location / speed / heading etc. changes.
