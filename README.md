@@ -137,3 +137,7 @@
 * Use of Xcode's simulator, to simulate a mobile device (then navigated to the external url on that simulated device) (URL provided by browser Sync server).
 * use of navigator.geolocation interface
 * watchPosition() method of the above, which accepts a Position object containing coordinates/heading/speed etc that is passed to a callback function, which is called whenever location / speed / heading etc. changes.
+
+## 22 - Follow Along Links
+* use of elem.getBoundingClientRect(): returns a DOMRect object with data about the element's position relative to viewport and its dimensions.
+* Use of the CSS translate() function (which works with the transform property) to reposition an element on the page
