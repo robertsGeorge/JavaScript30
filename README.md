@@ -141,3 +141,9 @@
 ## 22 - Follow Along Links
 * use of elem.getBoundingClientRect(): returns a DOMRect object with data about the element's position relative to viewport and its dimensions.
 * Use of the CSS translate() function (which works with the transform property) to reposition an element on the page
+
+# 23 - Speech Synthesis
+* Working with SpeechSynthesis interface
+* specifically setting properties of a SpeechSynthesisUtterance object instance, e.g. pitch, rate, text and voice
+* Passing arguments to a eventListener callback by wrapping it inside an arrow function (also began to explore the .bind(this, arguments) method as an alternative way to do this)
+* Setting default parameter values, and default function behaviour based on that default value, and alternative behaviour if another value is passed.
