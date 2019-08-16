@@ -130,20 +130,24 @@
 * Using html canvas element's context to insert image data.
 * link.setAttribute('download', 'handsome');
 
-## 20 - Native Speech Recognition
+### 20 - Native Speech Recognition
 * use of the SpeechRecognition native browser API
 
-## 21 - Geolocation based Speedometer and Compass
+### 21 - Geolocation based Speedometer and Compass
 * Use of Xcode's simulator, to simulate a mobile device (then navigated to the external url on that simulated device) (URL provided by browser Sync server).
 * use of navigator.geolocation interface
 * watchPosition() method of the above, which accepts a Position object containing coordinates/heading/speed etc that is passed to a callback function, which is called whenever location / speed / heading etc. changes.
 
-## 22 - Follow Along Links
+### 22 - Follow Along Links
 * use of elem.getBoundingClientRect(): returns a DOMRect object with data about the element's position relative to viewport and its dimensions.
 * Use of the CSS translate() function (which works with the transform property) to reposition an element on the page
 
-# 23 - Speech Synthesis
+### 23 - Speech Synthesis
 * Working with SpeechSynthesis interface
 * specifically setting properties of a SpeechSynthesisUtterance object instance, e.g. pitch, rate, text and voice
 * Passing arguments to a eventListener callback by wrapping it inside an arrow function (also began to explore the .bind(this, arguments) method as an alternative way to do this)
 * Setting default parameter values, and default function behaviour based on that default value, and alternative behaviour if another value is passed.
+
+### 24 - Sticky Nav
+* Listening for a scroll event on the window (global) object
+* Accounting for extra space created when an element's css position is dynamically set to fixed. Elements below it will jump into the space it vacates. So can add e.g. padding to the body element to take this space up.
