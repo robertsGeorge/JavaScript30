@@ -151,3 +151,7 @@
 ### 24 - Sticky Nav
 * Listening for a scroll event on the window (global) object
 * Accounting for extra space created when an element's css position is dynamically set to fixed. Elements below it will jump into the space it vacates. So can add e.g. padding to the body element to take this space up.
+
+### 25 - Event Capture, Propagation, Bubbling and Once
+* Understanding that the browser performs a capture, which is to say on its way to the event target, it traverses ancestors and registers whether they have event handlers registered for the event type, and if so readies them for reaction on the bubbing phase. If capture is set to true, the handlers will react 'on the way down', before reaching the target element, rather than 'on the way up' after reaching it.
+* setting once:true for a handler will "unbind" it after one execution. That is the same as elem.removeEventListener
