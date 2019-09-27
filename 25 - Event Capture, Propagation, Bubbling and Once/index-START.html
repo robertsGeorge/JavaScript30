@@ -13,6 +13,8 @@
     </div>
   </div>
 
+
+
 <style>
   html {
     box-sizing: border-box;
@@ -40,8 +42,26 @@
   }
 </style>
 
-<button></button>
+
+<button>You can click me once, cos I'm a submit button</button>
+
+
 <script>
+  const divs = document.querySelectorAll('div');
+  const button = document.querySelector('button');
+
+  function logText(e) {
+    console.dir(this.classList.value); // classList is from DOMTokenList, which has value property (all classes as a string)
+    // e.stopPropagation();
+  }
+
+  divs.forEach(div => div.addEventListener('click', logText, {
+    capture: true
+  })); 
+
+  button.addEventListener('click', () => console.log('clicked!'), {
+    once: true // listener will unbind itself (remove itself, after one click)
+  });
 
 </script>
 </body>
