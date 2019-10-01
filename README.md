@@ -155,3 +155,7 @@
 ### 25 - Event Capture, Propagation, Bubbling and Once
 * Understanding that the browser performs a capture, which is to say on its way to the event target, it traverses ancestors and registers whether they have event handlers registered for the event type, and if so readies them for reaction on the bubbing phase. If capture is set to true, the handlers will react 'on the way down', before reaching the target element, rather than 'on the way up' after reaching it.
 * setting once:true for a handler will "unbind" it after one execution. That is the same as elem.removeEventListener
+
+### 26 - Stripe Follow Along Dropdown
+* use of background.style.setProperty('prop-name', value)
+* using css property 'opacity' to hide an element, even when it is geometrically present on the page (which it needs to be to get its width and height)
