@@ -159,3 +159,6 @@
 ### 26 - Stripe Follow Along Dropdown
 * use of background.style.setProperty('prop-name', value)
 * using css property 'opacity' to hide an element, even when it is geometrically present on the page (which it needs to be to get its width and height)
+
+### 27 - Click and Drag to Scroll
+* Nothing much to note
