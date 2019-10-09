@@ -165,3 +165,7 @@
 
 ### 28 - Video Speed Controller UI
 * Nothing much to note
+
+### 29 - Countdown Clock
+* calling formElem.reset() to reset form inputs after handling an entry.
+* translating 24hr times to 12hr times (simple technique)
