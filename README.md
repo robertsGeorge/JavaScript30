@@ -169,3 +169,6 @@
 ### 29 - Countdown Clock
 * calling formElem.reset() to reset form inputs after handling an entry.
 * translating 24hr times to 12hr times (simple technique)
+
+### 30 - Whack A Mole Game
+* Use of conditional recursive call of randomiser function, to stop the problem of the randomiser outputting the same result in a row (which if there are 6 possibilities, there is a 1/6 chance of).
